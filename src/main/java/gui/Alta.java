@@ -15,6 +15,7 @@ public class Alta extends javax.swing.JFrame {
 
     public Alta() {
         initComponents();
+        this.setLocationRelativeTo(null);
         
         vCabeceras.addElement("Nombre");
         vCabeceras.addElement("Apellido");
