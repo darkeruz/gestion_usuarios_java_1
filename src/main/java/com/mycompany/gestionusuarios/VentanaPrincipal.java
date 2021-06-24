@@ -1,6 +1,8 @@
 package com.mycompany.gestionusuarios;
 
 import gui.Alta;
+import gui.Baja;
+import gui.Modificar;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
@@ -16,6 +18,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel_titulo = new javax.swing.JLabel();
         jButton_bajaAlumno = new javax.swing.JButton();
         jButton_altaAlumno = new javax.swing.JButton();
+        jButton_modificar = new javax.swing.JButton();
+        jButton_salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -23,7 +27,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel_titulo.setText("Elige una opción");
 
         jButton_bajaAlumno.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jButton_bajaAlumno.setIcon(new javax.swing.ImageIcon("/home/darke/NetBeansProjects/GestionUsuarios/images/quitar.png")); // NOI18N
         jButton_bajaAlumno.setText("Baja de alumno");
         jButton_bajaAlumno.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton_bajaAlumno.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -35,7 +38,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         jButton_altaAlumno.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jButton_altaAlumno.setIcon(new javax.swing.ImageIcon("/home/darke/NetBeansProjects/GestionUsuarios/images/agregar.png")); // NOI18N
         jButton_altaAlumno.setText("Alta de alumno");
         jButton_altaAlumno.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton_altaAlumno.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -46,31 +48,62 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jButton_modificar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jButton_modificar.setText("Modificar alumno");
+        jButton_modificar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton_modificar.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jButton_modificar.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_modificarActionPerformed(evt);
+            }
+        });
+
+        jButton_salir.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jButton_salir.setText("Salir");
+        jButton_salir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton_salir.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jButton_salir.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jButton_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_salirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addComponent(jLabel_titulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jButton_altaAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(jButton_bajaAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(jLabel_titulo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton_altaAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton_bajaAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel_titulo)
-                .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton_bajaAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton_altaAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,6 +111,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButton_bajaAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_bajaAlumnoActionPerformed
         // TODO add your handling code here:
+        Baja ventanaBaja = new Baja();
+        ventanaBaja.setVisible(true);
     }//GEN-LAST:event_jButton_bajaAlumnoActionPerformed
 
     private void jButton_altaAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_altaAlumnoActionPerformed
@@ -85,6 +120,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Alta alta = new Alta();
         alta.setVisible(true);
     }//GEN-LAST:event_jButton_altaAlumnoActionPerformed
+
+    private void jButton_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_modificarActionPerformed
+        // TODO add your handling code here:
+        Modificar ventanaModificar = new Modificar();
+        ventanaModificar.setVisible(true);
+    }//GEN-LAST:event_jButton_modificarActionPerformed
+
+    private void jButton_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_salirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton_salirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,6 +170,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_altaAlumno;
     private javax.swing.JButton jButton_bajaAlumno;
+    private javax.swing.JButton jButton_modificar;
+    private javax.swing.JButton jButton_salir;
     private javax.swing.JLabel jLabel_titulo;
     // End of variables declaration//GEN-END:variables
 }
